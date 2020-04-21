@@ -10,8 +10,11 @@ namespace FactoriesTest
             //var point = Point.NewPolarPoint(1.0, Math.PI / 2);
             //Console.WriteLine(point);
 
-            var test = new AsyncFactoryMethod();
-            await test.InitAsync();
+            //var test = new AsyncFactoryMethod();
+            //await test.InitAsync();
+
+            var x = await AsyncFactoryMethod.CreateAsync();
+
         }
     }
 }

@@ -7,15 +7,21 @@ namespace FactoriesTest
 {
     public class AsyncFactoryMethod
     {
-        public AsyncFactoryMethod()
+        private AsyncFactoryMethod()
         {
             
         }
 
-        public async Task<AsyncFactoryMethod> InitAsync()
+        private async Task<AsyncFactoryMethod> InitAsync()
         {
             await Task.Delay(1000);
             return this;
+        }
+
+        public static Task<AsyncFactoryMethod> CreateAsync()
+        {
+            var result = new AsyncFactoryMethod();
+            return result.InitAsync();
         }
     }
 }
