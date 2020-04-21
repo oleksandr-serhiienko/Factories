@@ -20,7 +20,9 @@ namespace FactoriesTest
             //var x = await AsyncFactoryMethod.CreateAsync();
 
             var machine = new HotDrinkMachine();
-            var drink = machine.MakeDrink(HotDrinkMachine.AvailbleDrink.Tea, 100);
+            //var drink = machine.MakeDrink(HotDrinkMachine.AvailbleDrink.Tea, 100);
+            //drink.Consume();
+            var drink = machine.MakeDrink();
             drink.Consume();
 
         }
