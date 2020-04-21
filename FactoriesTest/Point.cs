@@ -4,34 +4,38 @@ using System.Text;
 
 namespace FactoriesTest
 {
+
+    public enum CoordinateSystem
+    {
+        Cartesian,
+        Polar
+    }
+
     public class Point
     {
-        public enum CoordinateSystem
+        // factory method design
+        public static Point NewCaresainPoint(double x, double y)
         {
-            Cartesian,
-            Polar
+            return new Point(x, y);
+        }
+
+        public static Point NewPolarPoint(double rho, double theta)
+        {
+            return new Point(rho * Math.Cos(theta), rho * Math.Sin(theta));
         }
 
         public double X { get; set; }
         public double Y { get; set; }
 
-        public Point(double a, double b, 
-            CoordinateSystem system = CoordinateSystem.Cartesian)
+        private Point(double x, double y)
         {
-            (X, Y) = system switch 
-            {
-                CoordinateSystem.Cartesian => (a, b),
-                CoordinateSystem.Polar => (a*Math.Cos(b), a*Math.Sin(b)),
-                _=> throw new ArgumentNullException()
-            };
+            X = x;
+            Y = y;
         }
 
-        // is not possible to add the same signature for another values
-        // one of the reason to use facotires
-        //public Point(double rho, double theta)
-        //{
-
-        //}
-
+        public override string ToString()
+        {
+            return $"X : {X} Y: {Y}";
+        }
     }
 }
