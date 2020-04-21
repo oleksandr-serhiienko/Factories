@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FactoriesTest.Drink;
+using System;
 using System.Threading.Tasks;
 
 namespace FactoriesTest
@@ -13,10 +14,14 @@ namespace FactoriesTest
             //var test = new AsyncFactoryMethod();
             //await test.InitAsync();
 
-            var point = Point.Factory.NewPolarPoint(1.0, Math.PI / 2);
-            Console.WriteLine(point);
+            //var point = Point.Factory.NewPolarPoint(1.0, Math.PI / 2);
+            //Console.WriteLine(point);
 
             //var x = await AsyncFactoryMethod.CreateAsync();
+
+            var machine = new HotDrinkMachine();
+            var drink = machine.MakeDrink(HotDrinkMachine.AvailbleDrink.Tea, 100);
+            drink.Consume();
 
         }
     }
