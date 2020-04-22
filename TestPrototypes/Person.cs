@@ -2,13 +2,16 @@
 
 namespace TestPrototypes
 {
-    [Serializable]
     public class Person 
     {
         public string[] Names;
 
         public Adress Adress;
 
+        public Person()
+        {
+
+        }
         public Person(string[] names, Adress adress)
         {
             Names = names;

@@ -7,7 +7,7 @@ namespace TestPrototypes
         static void Main(string[] args)
         {
             var john = new Person(new[] { "john", "Smith" }, new Adress("MyStreet", 447));;
-            var jane = john.DeepCopy();
+            var jane = john.DeepCopyXml();
             jane.Names[0] = "Jay";
             jane.Adress.HouseNumber = 222;
             Console.WriteLine(john);

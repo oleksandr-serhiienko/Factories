@@ -2,14 +2,16 @@
 
 namespace TestPrototypes
 {
-    [Serializable]
     public class Adress 
     {
         public string StreetName;
 
         public int HouseNumber;
         private Adress adress;
+        public Adress()
+        {
 
+        }
         public Adress(Adress otherAdress)
         {
             StreetName = otherAdress.StreetName;
