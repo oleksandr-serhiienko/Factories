@@ -2,7 +2,7 @@
 
 namespace TestPrototypes
 {
-    public class Person : ICloneable
+    public class Person
     {
         public string[] Names;
 
@@ -14,9 +14,10 @@ namespace TestPrototypes
             Adress = adress;
         }
 
-        public object Clone()
+        public Person(Person other)
         {
-            return new Person(Names, (Adress)Adress.Clone());
+            Names = other.Names;
+            Adress = new Adress(other.Adress);
         }
 
         public override string ToString()
