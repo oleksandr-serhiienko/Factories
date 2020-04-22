@@ -16,7 +16,7 @@ namespace TestPrototypes
 
         public object Clone()
         {
-            return new Person(Names, Adress);
+            return new Person(Names, (Adress)Adress.Clone());
         }
 
         public override string ToString()
