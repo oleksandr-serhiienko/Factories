@@ -2,7 +2,8 @@
 
 namespace TestPrototypes
 {
-    public class Adress : IPrototype<Adress>
+    [Serializable]
+    public class Adress 
     {
         public string StreetName;
 
@@ -19,11 +20,6 @@ namespace TestPrototypes
         {
             StreetName = streetName;
             HouseNumber = houseNUmber;
-        }
-
-        public Adress DeepCopy()
-        {
-            return new Adress(StreetName, HouseNumber);
         }
 
         public override string ToString()

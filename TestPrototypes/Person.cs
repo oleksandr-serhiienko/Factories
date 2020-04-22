@@ -2,7 +2,8 @@
 
 namespace TestPrototypes
 {
-    public class Person : IPrototype<Person>
+    [Serializable]
+    public class Person 
     {
         public string[] Names;
 
@@ -25,9 +26,5 @@ namespace TestPrototypes
             return $"{nameof(Names)} : {string.Join(" ", Names)}, {nameof(Adress)}: {Adress}";
         }
 
-        public Person DeepCopy()
-        {
-            return new Person(Names, Adress.DeepCopy());
-        }
     }
 }
