@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace TestPrototypes
 {
-    public class Person
+    public class Person : ICloneable
     {
         public string[] Names;
 
@@ -14,6 +12,11 @@ namespace TestPrototypes
         {
             Names = names;
             Adress = adress;
+        }
+
+        public object Clone()
+        {
+            return new Person(Names, Adress);
         }
 
         public override string ToString()

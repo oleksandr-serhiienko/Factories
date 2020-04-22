@@ -1,6 +1,8 @@
-﻿namespace TestPrototypes
+﻿using System;
+
+namespace TestPrototypes
 {
-    public class Adress
+    public class Adress : ICloneable
     {
         public string StreetName;
 
@@ -10,6 +12,11 @@
         {
             StreetName = streetName;
             HouseNumber = houseNUmber;
+        }
+
+        public object Clone()
+        {
+            return new Adress(StreetName, HouseNumber);
         }
 
         public override string ToString()
